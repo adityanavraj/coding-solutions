@@ -53,33 +53,23 @@ Output: [0,1]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 14.9 MB (beats 44.74%)  
-**Submitted:** 2026-10-11T12:03:38.033Z  
+**Runtime:** 4 ms (beats 53.75%)  
+**Memory:** 14.8 MB (beats 44.74%)  
+**Submitted:** 2026-10-11T13:38:33.212Z  
 
 ```cpp
-
 class Solution {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::unordered_map<int, int> numMap;
-        
-        for (int i = 0; i < nums.size(); ++i) {
-            int complement = target - nums[i];
-            
-            // Check if the complement exists in our hash map
-            if (numMap.find(complement) != numMap.end()) {
-                return {numMap[complement], i};
-            }
-            
-            // Otherwise, store the current number and its index
-            numMap[nums[i]] = i;
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> seen;
+        for (int i = 0; i < (int)nums.size(); ++i) {
+            int need = target - nums[i];
+            if (seen.count(need)) return {seen[need], i};
+            seen[nums[i]] = i;
         }
-        
-        return {}; // Return an empty vector if no solution is found
+        return {};
     }
 };
-        
 ```
 
 ---
