@@ -1,0 +1,1 @@
+class Solution { public: vector<int> searchRange(vector<int>& a,int t){auto l=lower_bound(a.begin(),a.end(),t);if(l==a.end()||*l!=t)return {-1,-1};auto r=upper_bound(l,a.end(),t);return {(int)(l-a.begin()),(int)(r-a.begin())-1};} };
