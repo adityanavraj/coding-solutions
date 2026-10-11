@@ -1,0 +1,1 @@
+class Solution { public: int divide(int a,int b){long long x=a,y=b;bool neg=(x<0)^(y<0);x=x<0?-x:x;y=y<0?-y:y;long long q=0;for(int i=31;i>=0;--i)if((x>>i)>=y){x-=y<<i;q|=1LL<<i;}if(neg)q=-q;if(q>INT_MAX)return INT_MAX;if(q<INT_MIN)return INT_MIN;return (int)q;} };
