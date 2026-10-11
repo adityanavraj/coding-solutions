@@ -16,8 +16,8 @@
 
 | Difficulty | Solved |
 |:---:|:---:|
-| 🟢 Easy | **1** |
-| 🟡 Medium | **0** |
+| 🟢 Easy | **0** |
+| 🟡 Medium | **1** |
 | 🔴 Hard | **0** |
 | **Total** | **1** |
 
