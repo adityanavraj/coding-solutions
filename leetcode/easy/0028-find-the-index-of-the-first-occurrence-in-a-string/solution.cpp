@@ -1,0 +1,1 @@
+class Solution { public: int strStr(string h,string n){int m=n.size();vector<int> lps(m);for(int i=1,len=0;i<m;){if(n[i]==n[len])lps[i++]=++len;else if(len)len=lps[len-1];else lps[i++]=0;}for(int i=0,j=0;i<(int)h.size();){if(h[i]==n[j]){++i;++j;if(j==m)return i-j;}else if(j)j=lps[j-1];else ++i;}return -1;} };
