@@ -1,0 +1,1 @@
+class Solution { public: vector<string> letterCombinations(string d) { if(d.empty())return {}; vector<string> m={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"},r; string cur; auto dfs=[&](auto&& self,int i)->void{if(i==(int)d.size()){r.push_back(cur);return;} for(char c:m[d[i]-'0']){cur.push_back(c);self(self,i+1);cur.pop_back();}};dfs(dfs,0);return r;} };
